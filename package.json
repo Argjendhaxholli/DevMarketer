@@ -9,18 +9,28 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
+    "config": {
+        "webpack": "node_modules/laravel-mix/setup/webpack.config.js"
+    },
     "devDependencies": {
         "axios": "^0.18",
-        "popper.js": "^1.12",
+        "babel-preset-vue-app": "^2.0.0",
+        "buefy": "^0.6.3",
+        "bulma": "^0.6.2",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "popper.js": "^1.12",
+        "vue": "^2.5.13",
+        "vue-hot-reload-api": "^2.3.0",
+        "vue-html-loader": "^1.2.4",
+        "vue-loader": "^14.2.1",
+        "vue-template-compiler": "^2.5.15"
     },
     "dependencies": {
-        "buefy": "^0.6.3",
-        "bulma": "^0.6.2",
-        "font-awesome": "^4.7.0"
+        "cleave.js": "^1.1.2",
+        "font-awesome": "^4.7.0",
+        "sortablejs": "^1.7.0"
     }
 }

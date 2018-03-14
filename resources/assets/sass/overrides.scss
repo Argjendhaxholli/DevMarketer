@@ -1,0 +1,120 @@
+body {
+  background-color: $body-background;
+  height:120vh;
+}
+
+/*==========================================
+=============  Text Overrides  =============
+============================================*/
+
+.is-muted {
+  color: $grey-light !important;
+}
+
+.media-content {
+  overflow: none !important;
+}
+
+.is-muted:hover {
+  color: $grey !important;
+}
+
+.container.is-fluid {
+  margin-top: 2px;
+}
+
+.card {
+  background-color: white;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+          box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+}
+
+.card-header {
+  border: 1px solid #f6f6f6;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.tabs {
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tabs:not(:last-child) {
+  margin-bottom: 0px;
+}
+
+.tabs ul {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: none !important;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.tabs li {
+  display: block;
+  height: 100%;
+}
+
+.navbar-item.has-dropdown {
+  height: 100%;
+  width: 160px;
+}
+
+
+
+.tabs a {
+  height: 100% !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom-color: #dbdbdb;
+  color: #4a4a4a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -1px;
+  padding: 0.5em 1em;
+  vertical-align: top;
+}
+
+.media-content {
+  overflow: none !important;
+}
