@@ -10,6 +10,8 @@ var app = new Vue({
     permissionType: 'basic',
     resource: '',
     crudSelected: ['create', 'read', 'update', 'delete'],
+    title: '',
+    slug: '',
   },
   methods: {
     crudName: function(item) {
@@ -20,6 +22,9 @@ var app = new Vue({
     },
     crudDescription: function(item) {
       return "Allow a User to " + item.toUpperCase() + " a " + app.resource.substr(0,1).toUpperCase() + app.resource.substr(1);
+    },
+    updateSlug: function(val) {
+      this.slug = val;
     }
   }
 });
