@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LaraFlash;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        LaraFlash::add()->content('Hello' . " " . Auth::user()->name)->priority(6)->type('Info');
+        // LaraFlash::success("Yeah it worked!");
+        // LaraFlash::danger("Oops Something went wrong!");
+        // LaraFlash::snackbar("Click to continue");
         return view('home');
     }
 }

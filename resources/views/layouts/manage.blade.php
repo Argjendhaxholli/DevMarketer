@@ -26,7 +26,8 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-
+<script src="{{ asset('js/app.js') }}"></script>
+@include('_includes.notifications.toast')
+{{-- @yield('scripts') --}}
 </body>
 </html>

@@ -12,6 +12,7 @@ var app = new Vue({
     crudSelected: ['create', 'read', 'update', 'delete'],
     title: '',
     slug: '',
+    // api_token: '{{Auth::user()->api_token}}'
   },
   methods: {
     crudName: function(item) {

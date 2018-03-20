@@ -58,34 +58,59 @@
       },
       data: function(){
         return {
-          slug: this.convertTtitle(),
+          slug: this.convertTitle(),
           isEditing: false,
           customSlug:  '',
-          wasEdited: false
+          wasEdited: false,
+          api_token: this.$root.api_token,
         }
       },
       methods: {
-        convertTtitle: function() {
-          return Slug(this.title)
+        convertTitle: function() {
+          return Slug(this.title);
         },
         editSlug: function() {
           this.customSlug = this.slug;
+          this.$emit('edit', this.slug);
           this.isEditing = true;
         },
         saveSlug: function() {
           this.wasEdited = true;
           this.slug = Slug(this.customSlug);
-          this.$emit('save-custom-slug', this.slug);
+          this.$emit('save', this.slug);
           this.isEditing = false;
+          this.wasEdited = false;
+        },
+        resetEditing: function() {
+          this.slug = this.convertTitle();
+          this.$emit('reset', this.slug);
+        },
+        setSlug:function(newVal, count = 0) {
+          let slug = Slug(newVal + (count > 0 ? `-${count}` : ''));
+          let vm = this;
+          if (this.api_token && slug) {
+            axios.get('/api/posts/unique', {
+              params: {
+                api_token: vm.api_token,
+                slug: slug
+              }
+            }).then(function (response) {
+              if (response.data) {
+                vm.slug = slug;
+                vm.$emit('slug-changed', slug)
+              } else {
+                vm.setSlug(newVal, count+1)
+              }
+            }).catch(function (error) {
+              console.log(error);
+            });
+          }
         }
       },
       watch: {
           title: _.debounce(function() {
-              this.slug = this.convertTtitle()
-          }, 250),
-          slug: function(val) {
-            this.$emit('slug-changed', this.slug)
-          }
+              this.slug = this.convertTitle();
+          }, 500)
       }
     }
 </script>
